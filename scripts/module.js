@@ -14,10 +14,14 @@ Hooks.on("renderCombatTracker", async (app, html) => {
         const actorData = getCombatantActorData(el.dataset.combatantId);
         el.querySelector("div.token-initiative").before(
             $.parseHTML(getReadyHtml(
-                actorData.hp,
-                actorData.structure,
-                actorData.heat,
-                actorData.stress)
+                actorData.hp.value.value,
+                actorData.hp.value.max,
+                actorData.structure.value,
+                actorData.structure.max,
+                actorData.heat.value,
+                actorData.heat.max,
+                actorData.stress.value
+                actorData.stress.max)
             )[0]
         );
     });
@@ -27,13 +31,13 @@ function getCombatantActorData(combatantId) {
     return game.combat.combatants.get(combatantId).actor.system;
 }
 
-function getReadyHtml(hp, structure, heat, stress) {
+function getReadyHtml(hp,hpmax, structure,structuremax, heatmax, stressmax) {
     console.log("AUGMENTED | Getting HTML");
     let html = `<div class="token-stats flex-center">`;
     if (typeof hp !== 'undefined') {
         html += (`<div class="token-stats-hp">
             <i class="token-stats-icon mdi mdi-heart-outline"></i>
-            <span class="token-stats-text">${hp}</span>
+            <span class="token-stats-text">${hp}/${hpmax}</span>
         </div>`);
     }
     if (typeof structure !== 'undefined') {
