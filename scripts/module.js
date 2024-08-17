@@ -14,8 +14,8 @@ Hooks.on("renderCombatTracker", async (app, html) => {
         const actorData = getCombatantActorData(el.dataset.combatantId);
         el.querySelector("div.token-initiative").before(
             $.parseHTML(getReadyHtml(
-                actorData.hp.value.value,
-                actorData.hp.value.max,
+                actorData.hp.value,
+                actorData.hp.max,
                 actorData.structure.value,
                 actorData.structure.max,
                 actorData.heat.value,
