@@ -24,7 +24,7 @@ Hooks.on("renderCombatTracker", async (app, html) => {
 });
 
 function getCombatantActorData(combatantId) {
-    return game.combat.combatants.get(combatantId).actor;
+    return game.combat.combatants.get(combatantId).actor.system;
 }
 
 function getReadyHtml(hp, structure, heat, stress) {
