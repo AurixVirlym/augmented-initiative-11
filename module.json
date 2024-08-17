@@ -5,12 +5,15 @@
   "version": "This is auto replaced",
   "library": "false",
   "system": ["lancer"],
-  "manifestPlusVersion": "1.0.0",
-  "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9",
+  "manifestPlusVersion": "1.0.1",
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "11",
   "authors": [
     {"name":"Aron Morris",
     "url":"https://github.com/aronmorris"
+    },
+    {"name":"Danni Trzesicka",
+    "url":"https://github.com/AurixVirlym/"
     },
     {
       "name": "The League of Extraordinary FVTT Developers",
